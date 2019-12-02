@@ -30,17 +30,16 @@ public class UserInputControl {
             case 'p':
                 System.exit(0);
             default:
-                System.out.println("Tokio veiksmo nėra. ivesti kita raide");
+                System.out.println("There is no such action. Enter another letter");
         }
 
     }
 
     private void pressedD(){
+        setSourceIAndJValue();
         for (int i = 0; i < table.getTable().length; i++) {
             for (int j = 0; j < table.getTable().length; j++) {
                 if (table.getTable()[i][j] == 0) {
-                    sourceI = i;
-                    sourceJ = j;
                     destinationJ = j + 1;
                     destinationI = i;
                 }
@@ -50,11 +49,11 @@ public class UserInputControl {
     }
 
     private void pressedA(){
+        setSourceIAndJValue();
         for (int i = 0; i < table.getTable().length; i++) {
             for (int j = 0; j < table.getTable().length; j++) {
                 if (table.getTable()[i][j] == 0) {
-                    sourceI = i;
-                    sourceJ = j;
+                   // sourceI = i; sourceJ = j; // analogiskai ir kitur
                     destinationJ = j - 1;
                     destinationI = i;
                 }
@@ -64,11 +63,10 @@ public class UserInputControl {
     }
 
     private void pressedS(){
+        setSourceIAndJValue();
         for (int i = 0; i < table.getTable().length; i++) {
             for (int j = 0; j < table.getTable().length; j++) {
                 if (table.getTable()[i][j] == 0) {
-                    sourceI = i;
-                    sourceJ = j;
                     destinationJ = j;
                     destinationI = i+1;
                 }
@@ -78,12 +76,10 @@ public class UserInputControl {
     }
 
     private void pressedW(){
-       // setSourceValue();
+        setSourceIAndJValue();
         for (int i = 0; i < table.getTable().length; i++) {
             for (int j = 0; j < table.getTable().length; j++) {
                 if (table.getTable()[i][j] == 0) {
-                    sourceI = i;
-                    sourceJ = j;
                     destinationJ = j;
                     destinationI = i-1;
                 }
@@ -99,7 +95,7 @@ public class UserInputControl {
         //System.out.println(tempR);
     }
 
-    /*public void setSourceValue(){
+    private void setSourceIAndJValue(){
         for (int i = 0; i < table.getTable().length; i++) {
             for (int j = 0; j < table.getTable().length; j++) {
                 if (table.getTable()[i][j] == 0) {
@@ -108,6 +104,6 @@ public class UserInputControl {
                 }
             }
         }
-    }*/
+    }
 
 }
